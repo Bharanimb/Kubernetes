@@ -1,0 +1,20 @@
+# simple pod creation
+
+apiVersion: v1
+kind: Pod
+metadata:
+  name: nginx-pod
+  labels:
+    app: nginx
+spec:
+  containers:
+    - name: nginx-container
+      image: nginx:latest
+      ports:
+        - containerPort: 80
+
+
+# kubectl apply -f pod-definition.yml  apply changes in yaml file
+# kubectl get pods                     verify the created pods
+# kubectl describe pod nginx_pod       see pod details using pod name
+# kubectl delete -f pod-definition.yml to delete the pod
